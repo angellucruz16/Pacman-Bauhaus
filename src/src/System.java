@@ -124,7 +124,9 @@ public class System extends PApplet {
 			break;
 			
 		case 3:
-			background (255);
+			if (mouseX > 329 && mouseX < 329 + 141 // Set Player
+					&& mouseY > 642 && mouseY < 642 + 43)
+					state = 1;
 			//PApplet.println("entre");	
 			break;
 			

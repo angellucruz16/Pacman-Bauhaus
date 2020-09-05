@@ -16,7 +16,7 @@ public class NewPlayer extends Display {
 	public void render () {
 		sketch.image(img, 0, 0);
 		
-		sketch.text(name,577,303+50);
+		sketch.text(name,505,360);
 	}
 	public void setName (String newName) {
 		name = newName;
