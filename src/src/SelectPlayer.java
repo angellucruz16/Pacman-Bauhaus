@@ -38,9 +38,9 @@ public class SelectPlayer extends Display{
 		  gRect3 = 86;
 		  bRect3 = 186;
 		  
-		  player1 = "NEW PLAYER";
-		  player2 = "NEW PLAYER";
-		  player3 = "NEW PLAYER";
+		  player1 = "SELECT TO SET";
+		  player2 = "SELECT TO SET";
+		  player3 = "SELECT TO SET";
 
 		 currentPlayer = 0;
 	}
@@ -62,11 +62,11 @@ public void render () {
 	
 	sketch.textSize(14);
 	sketch.fill(255);
-	sketch.text(player1,536,350);
+	sketch.text(player1,526,350);
 	
-	sketch.text(player2,536,350+60);
+	sketch.text(player2,526,350+60);
 	
-	sketch.text(player3,536,350+120);
+	sketch.text(player3,526,350+120);
     }
 
 public void bottonOneRed() {

@@ -11,11 +11,9 @@ public class System extends PApplet {
 	NewPlayer newPlayer;
 	ArrayList<String> letters;
 	Scores scores;
+	Playing playing;
 	
 	int state;
-	
-	int posX=308;
-	int posY=366;
 
 	
 	public static void main(String[] args) {
@@ -36,6 +34,8 @@ public class System extends PApplet {
 		letters = new ArrayList<String> ();
 		
 		scores = new Scores(this);
+		
+		playing = new Playing (this);
 	
 		state=1;
 	} //settings
@@ -67,6 +67,10 @@ public class System extends PApplet {
 		case 4:
 			newPlayer.render();
 			break;
+		case 5:
+			playing.render();
+			break;
+		
 		}
 
 
@@ -80,11 +84,11 @@ public class System extends PApplet {
 		
 		switch (state) {
 		case 1:
-			if (mouseX > posX && mouseX < posX + 184
-				&& mouseY > posY && mouseY < posY+34 )	// PLAY
+			if (mouseX > 308 && mouseX < 308 + 184
+				&& mouseY > 366 && mouseY < 366+34 )	// PLAY
 				state = 2;
 			
-			if (mouseX > posX && mouseX < posX + 184
+			if (mouseX > 308 && mouseX < 308 + 184
 				&& mouseY > 414 && mouseY < 414 +34)  // SCORES
 				state = 3;
 			
@@ -98,7 +102,7 @@ public class System extends PApplet {
 			
 			if (mouseX > 557 && mouseX < 557+ 141 //Play
 				&& mouseY > 563 && mouseY < 563 + 42)
-				PApplet.println("entre");
+				state = 5;
 			{}	
 			if (mouseX > 453 && mouseX < 453 + 244 //button 1
 				&& mouseY > 324 && mouseY < 324 + 42)
@@ -124,17 +128,17 @@ public class System extends PApplet {
 			break;
 			
 		case 3:
-			if (mouseX > 329 && mouseX < 329 + 141 // Set Player
+			if (mouseX > 329 && mouseX < 329 + 141 // Scores
 					&& mouseY > 642 && mouseY < 642 + 43)
 					state = 1;
 			//PApplet.println("entre");	
 			break;
 			
 			
-		case 4:
-			if (mouseX > 600 && mouseX < 600 + 118
-				&& mouseY > 396 && mouseY < 396 + 32) // Save
-				
+		case 4: //Set player
+			if (mouseX > 576 && mouseX < 576 + 141
+				&& mouseY > 399 && mouseY < 399 + 42) // Save
+				//PApplet.println("entre");	
 				switch (selectPlayer.getcurrentPlayer()) {
 				
 				case 1: 
