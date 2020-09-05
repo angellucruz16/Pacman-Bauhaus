@@ -50,23 +50,23 @@ public void render () {
 	sketch.noStroke();
 	sketch.image(img, 0, 0);
 	
-	sketch.fill (rRect1, gRect1, bRect1);
-	sketch.rect(520,279,197,39);
+	sketch.fill (rRect1, gRect1, bRect1); //botón 1
+	sketch.rect(453,324,244,42);
 	
-	sketch.fill (rRect2, gRect2, bRect2);
-	sketch.rect(520,328, 197, 39);
+	sketch.fill (rRect2, gRect2, bRect2); // boton 2
+	sketch.rect(453,383, 244, 42);
 	
-	sketch.fill (rRect3, gRect3, bRect3);
-	sketch.rect(520,377, 197, 39);
+	sketch.fill (rRect3, gRect3, bRect3); // boton 3
+	sketch.rect(453,443, 244, 42);
 	
 	
 	sketch.textSize(14);
 	sketch.fill(255);
-	sketch.text(player1,577,305);
+	sketch.text(player1,536,350);
 	
-	sketch.text(player2,577,303+50);
+	sketch.text(player2,536,350+60);
 	
-	sketch.text(player3,577,401);
+	sketch.text(player3,536,350+120);
     }
 
 public void bottonOneRed() {

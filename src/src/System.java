@@ -88,36 +88,37 @@ public class System extends PApplet {
 				&& mouseY > 414 && mouseY < 414 +34)  // SCORES
 				state = 3;
 			
-			if (mouseX > posX && mouseX < posX + 197
-				&& mouseY >  342 && mouseY< 342 + 33) //EXIT
+			if (mouseX > 47 && mouseX < 47 + 83
+				&& mouseY >  36 && mouseY< 36 + 34) //EXIT
 				exit (); 
 			
 			break;
 			
 		case 2:
 			
-			if (mouseX > 596 && mouseX < 596+ 118 //Play
-				&& mouseY > 462 && mouseY < 462 + 32)
+			if (mouseX > 557 && mouseX < 557+ 141 //Play
+				&& mouseY > 563 && mouseY < 563 + 42)
+				PApplet.println("entre");
 			{}	
-			if (mouseX > 520 && mouseX < 520 + 197 //button 1
-				&& mouseY > 279 && mouseY < 279 + 39)
+			if (mouseX > 453 && mouseX < 453 + 244 //button 1
+				&& mouseY > 324 && mouseY < 324 + 42)
 				selectPlayer.bottonOneRed();
 				//PApplet.println("entre");
 			
-			if (mouseX > 520 && mouseX < 520 + 197
-					&& mouseY > 328 && mouseY < 328 + 39) //Button 2
+			if (mouseX > 453 && mouseX < 453 + 244
+					&& mouseY > 383 && mouseY < 383 + 42) //Button 2
 				selectPlayer.bottonTwoRed();
 			
-			if (mouseX > 520 && mouseX < 520 + 197
-					&& mouseY > 377 && mouseY < 377 + 39) // Button 3
+			if (mouseX > 453 && mouseX < 453 + 244
+					&& mouseY > 443 && mouseY < 443 + 42) // Button 3
 				selectPlayer.bottonThreeRed();
 			
-			if (mouseX > 520 && mouseX < 520 + 66 // Delete
-				&& mouseY > 472 && mouseY < 472 + 32)
+			if (mouseX > 453 && mouseX < 453 + 93 // Delete
+				&& mouseY > 523 && mouseY < 523 + 26)
 				PApplet.println("entre");
 			
-			if (mouseX > 596 && mouseX < 596 + 118 // New Player
-				&& mouseY > 472 && mouseY < 472 + 32)
+			if (mouseX > 557 && mouseX < 557 + 140 // Set Player
+				&& mouseY > 523 && mouseY < 523 + 26)
 				state = 4;
 			
 			break;
