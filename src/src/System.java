@@ -1,6 +1,6 @@
 package src;
 
-import java.lang.reflect.Array;
+//import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import processing.core.PApplet;
@@ -10,11 +10,12 @@ public class System extends PApplet {
 	SelectPlayer selectPlayer;
 	NewPlayer newPlayer;
 	ArrayList<String> letters;
+	Scores scores;
 	
 	int state;
 	
-	int posX=516;
-	int posY=212;
+	int posX=308;
+	int posY=366;
 
 	
 	public static void main(String[] args) {
@@ -33,6 +34,8 @@ public class System extends PApplet {
 		newPlayer = new NewPlayer (this);
 		
 		letters = new ArrayList<String> ();
+		
+		scores = new Scores(this);
 	
 		state=1;
 	} //settings
@@ -58,7 +61,7 @@ public class System extends PApplet {
 			break;
 
 		case 3:
-			background (0); //scores
+			scores.render(); //scores
 			break;
 			
 		case 4:
@@ -77,16 +80,16 @@ public class System extends PApplet {
 		
 		switch (state) {
 		case 1:
-			if (mouseX > posX && mouseX < posX + 197
-				&& mouseY > posY && mouseY < posY+70 )	
+			if (mouseX > posX && mouseX < posX + 184
+				&& mouseY > posY && mouseY < posY+34 )	// PLAY
 				state = 2;
 			
-			if (mouseX > posX && mouseX < posX + 197
-				&& mouseY > 291 && mouseY < 291 +39)
+			if (mouseX > posX && mouseX < posX + 184
+				&& mouseY > 414 && mouseY < 414 +34)  // SCORES
 				state = 3;
 			
 			if (mouseX > posX && mouseX < posX + 197
-				&& mouseY >  342 && mouseY< 342 + 33)
+				&& mouseY >  342 && mouseY< 342 + 33) //EXIT
 				exit (); 
 			
 			break;
@@ -118,6 +121,12 @@ public class System extends PApplet {
 				state = 4;
 			
 			break;
+			
+		case 3:
+			background (255);
+			//PApplet.println("entre");	
+			break;
+			
 			
 		case 4:
 			if (mouseX > 600 && mouseX < 600 + 118
