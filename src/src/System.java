@@ -13,6 +13,7 @@ public class System extends PApplet {
 	Scores scores;
 	Playing playing;
 	String name;
+	Board board;
 	
 	ArrayList <Player> players;
 	
@@ -38,9 +39,11 @@ public class System extends PApplet {
 		
 		scores = new Scores(this);
 		
-		playing = new Playing (this,"PABLO");
+		playing = new Playing (this);
 	
 		players = new ArrayList <Player> ();
+		
+		board = new Board (this);
 	
 		state=1;
 	} //settings
@@ -74,6 +77,10 @@ public class System extends PApplet {
 			break;
 		case 5:
 			playing.render();
+			board.renderArray();
+			
+			
+			
 			break;
 		
 		}
@@ -106,10 +113,12 @@ public class System extends PApplet {
 		case 2://Select Player
 			
 			if (mouseX > 557 && mouseX < 557+ 141 //Play
-				&& mouseY > 563 && mouseY < 563 + 42)
+				&& mouseY > 563 && mouseY < 563 + 42) {
+				playing.currentPlayer= players.get(selectPlayer.getcurrentPlayer()-1);
+			}
 				state = 5;
 			//PApplet.println("entre");
-			{}	
+				
 			if (mouseX > 453 && mouseX < 453 + 244 //button 1
 				&& mouseY > 324 && mouseY < 324 + 42)
 				selectPlayer.bottonOneRed();
@@ -141,19 +150,30 @@ public class System extends PApplet {
 			break;
 			
 			
-		case 4: //Set player
+		case 4: //New player
 			if (mouseX > 576 && mouseX < 576 + 141
 				&& mouseY > 399 && mouseY < 399 + 42) // Save
-				//PApplet.println("entre");	
+			{
 				switch (selectPlayer.getcurrentPlayer()) {
 				
 				case 1: 
 					selectPlayer.setNameP1(String.join("", letters));
 					
-					state=2;
+				break;
+				
+				case 2: 
+					selectPlayer.setNameP2(String.join("", letters));
+					
+				break;
+				
+				case 3: 
+					selectPlayer.setNameP3(String.join("", letters));
+					
 				break;
 				}
-			
+				newPlayer = new NewPlayer (this);
+				state=2;
+			}
 			break;
 			
 		case 5://Playing
@@ -198,8 +218,9 @@ public class System extends PApplet {
 	} //KeyPressed
 	
  public void namePlayers () {
-	 String name = letters.get(0);
-	 playing.namePlayer1(name);
+	 players.get(selectPlayer.getcurrentPlayer()-1).name = String.join("", letters);
+	 //String name = letters.get(0);
+	// playing.namePlayer1(name);
 	 
 	 
  }//nameplayers

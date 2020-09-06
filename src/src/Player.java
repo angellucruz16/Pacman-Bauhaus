@@ -3,7 +3,7 @@ package src;
 
 import processing.core.*;
 
-	public class Player extends Display {
+	public class Player  {
 	
 	   String name;
 	    int score;
@@ -11,7 +11,7 @@ import processing.core.*;
 	    
 
 	public Player(PApplet sketch) {
-	        super (sketch);
+	        
 		
 		
 	}
@@ -30,4 +30,13 @@ import processing.core.*;
     	this.time = time;
     	
     }//set time
+    public void renderPacman () {
+    	
+    	
+    	
+    	
+    }
+    
+    
+    
 }

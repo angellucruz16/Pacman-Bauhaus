@@ -9,6 +9,14 @@ public class Scores extends Display {
 		  img = sketch.loadImage("/Imagenes/Scores.png");
 	} 
 	
+	//public enum type () {
+		
+		//PACDOTS,FRUIT,GHOST;
+		
+		
+		
+	//} 
+	
 	public void render () {
 		sketch.image(img, 0, 0);
 		

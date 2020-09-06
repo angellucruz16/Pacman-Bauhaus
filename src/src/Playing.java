@@ -4,17 +4,17 @@ package src;
 import processing.core.*;
 
 public class Playing extends Display {
-	public String player1;
-	public int currentPlayer;
-	
+	public Player currentPlayer;
+	public  NewPlayer name;
 	 
 	
-	public Playing (PApplet sketch,String name) {
+	public Playing (PApplet sketch) {
 		super (sketch);
 
 		  img = sketch.loadImage("/Imagenes/Gaming.png");
-		  player1 = name;
-		 
+		 // if (name.getName()!=null)
+			//  player1 = "" +name.getName();
+		
 	} 
 	
 	public void render () {
@@ -22,12 +22,10 @@ public class Playing extends Display {
 
 		sketch.textSize(14);
 		sketch.fill(0);
-		sketch.text(player1,561,110);
+		sketch.text(currentPlayer.name,561,110);
 		
 	}
 
-	public void namePlayer1 (String name1) {
-		player1 = name1;
-		
-	}
+
+	
 }
