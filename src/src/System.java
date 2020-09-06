@@ -12,6 +12,9 @@ public class System extends PApplet {
 	ArrayList<String> letters;
 	Scores scores;
 	Playing playing;
+	String name;
+	
+	ArrayList <Player> players;
 	
 	int state;
 
@@ -35,7 +38,9 @@ public class System extends PApplet {
 		
 		scores = new Scores(this);
 		
-		playing = new Playing (this);
+		playing = new Playing (this,"PABLO");
+	
+		players = new ArrayList <Player> ();
 	
 		state=1;
 	} //settings
@@ -50,7 +55,7 @@ public class System extends PApplet {
 
 	public void draw() {
 		
-		//m.render(); //m es el nombre que le dimos
+		
 		switch (state) {
 		case 1:
 			mainMenu.render();
@@ -83,7 +88,7 @@ public class System extends PApplet {
 		PApplet.println(mouseY);
 		
 		switch (state) {
-		case 1:
+		case 1: //MainMenu
 			if (mouseX > 308 && mouseX < 308 + 184
 				&& mouseY > 366 && mouseY < 366+34 )	// PLAY
 				state = 2;
@@ -98,11 +103,12 @@ public class System extends PApplet {
 			
 			break;
 			
-		case 2:
+		case 2://Select Player
 			
 			if (mouseX > 557 && mouseX < 557+ 141 //Play
 				&& mouseY > 563 && mouseY < 563 + 42)
 				state = 5;
+			//PApplet.println("entre");
 			{}	
 			if (mouseX > 453 && mouseX < 453 + 244 //button 1
 				&& mouseY > 324 && mouseY < 324 + 42)
@@ -127,8 +133,8 @@ public class System extends PApplet {
 			
 			break;
 			
-		case 3:
-			if (mouseX > 329 && mouseX < 329 + 141 // Scores
+		case 3://Scores
+			if (mouseX > 329 && mouseX < 329 + 141 
 					&& mouseY > 642 && mouseY < 642 + 43)
 					state = 1;
 			//PApplet.println("entre");	
@@ -150,6 +156,15 @@ public class System extends PApplet {
 			
 			break;
 			
+		case 5://Playing
+			if (mouseX > 542 && mouseX < 542 + 184
+					&& mouseY > 255 && mouseY < 255 + 34)
+			//PApplet.println("entre");
+			state = 1;
+			
+			if (mouseX > 542 && mouseX < 542 + 184
+					&& mouseY > 301 && mouseY < 301 + 34)
+			state = 3;
 		}
 
 		
@@ -172,7 +187,7 @@ public class System extends PApplet {
 			letters.remove(letters.size()-1);
 			newPlayer.setName(String.join("", letters)); // se guarda en el nombre que se escribe
 			
-		
+			name = newPlayer.getName();
 		
 	
 		break;
@@ -181,5 +196,19 @@ public class System extends PApplet {
 		
 		
 	} //KeyPressed
-
+	
+ public void namePlayers () {
+	 String name = letters.get(0);
+	 playing.namePlayer1(name);
+	 
+	 
+ }//nameplayers
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
 }
