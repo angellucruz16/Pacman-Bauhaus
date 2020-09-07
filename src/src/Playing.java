@@ -14,7 +14,7 @@ public class Playing extends Display {
 		  img = sketch.loadImage("/Imagenes/Gaming.png");
 		 // if (name.getName()!=null)
 			//  player1 = "" +name.getName();
-		
+		currentPlayer= new Player();
 	} 
 	
 	public void render () {

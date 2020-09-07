@@ -43,6 +43,9 @@ public class System extends PApplet {
 	
 		players = new ArrayList <Player> ();
 		
+		players.add(new Player());
+		players.add(new Player());
+		players.add(new Player());
 		board = new Board (this);
 	
 		state=1;
@@ -114,9 +117,11 @@ public class System extends PApplet {
 			
 			if (mouseX > 557 && mouseX < 557+ 141 //Play
 				&& mouseY > 563 && mouseY < 563 + 42) {
+				PApplet.println(players.get(selectPlayer.getcurrentPlayer()-1));
 				playing.currentPlayer= players.get(selectPlayer.getcurrentPlayer()-1);
-			}
 				state = 5;
+			}
+				
 			//PApplet.println("entre");
 				
 			if (mouseX > 453 && mouseX < 453 + 244 //button 1
@@ -171,7 +176,8 @@ public class System extends PApplet {
 					
 				break;
 				}
-				newPlayer = new NewPlayer (this);
+				namePlayers();
+			//	newPlayer = new NewPlayer (this);
 				state=2;
 			}
 			break;

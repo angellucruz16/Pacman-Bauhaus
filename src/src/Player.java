@@ -3,40 +3,40 @@ package src;
 
 import processing.core.*;
 
-	public class Player  {
-	
-	   String name;
-	    int score;
-	    int time;
-	    
+public class Player  {
 
-	public Player(PApplet sketch) {
-	        
-		
-		
+	String name;
+	int score;
+	int time;
+
+
+	public Player() {
+		score= 0;
+
+
 	}
-	
-	public void setName (String newName) {
-	        name = newName;
 
-	    }
-    public void setScore (int score) {
-    	
-    	this.score = score;
-    	
-    }//setscore
-    public void setTIME (int time) {
-    	
-    	this.time = time;
-    	
-    }//set time
-    public void renderPacman () {
-    	
-    	
-    	
-    	
-    }
-    
-    
-    
+	public void setName (String newName) {
+		name = newName;
+
+	}
+	public void setScore (int score) {
+
+		this.score = score;
+
+	}//setscore
+	public void setTIME (int time) {
+
+		this.time = time;
+
+	}//set time
+	public void renderPacman () {
+
+
+
+
+	}
+
+
+
 }
