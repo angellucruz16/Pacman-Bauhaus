@@ -40,7 +40,7 @@ import processing.core.*;
 		}//AddGhost
 
 		public void addPacman () {
-			image1= "/Imagenes/image_PACMAN.png";
+			image1= "/Imagenes/Imagenes/Pacman.png";
 	
 	
 		}//AddPacman
@@ -57,12 +57,14 @@ import processing.core.*;
 
 				img = sketch.loadImage(image1);
 				img.resize(4,4);
-				
+				if(image1.equals("/Imagenes/Imagenes/Pacman.png") )
+					img.resize(20, 20);
 
 				 sketch.image(img, posX, posY);
+				 
 			}
 				
-					
+		
 			
 		}
 		

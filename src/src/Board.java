@@ -32,7 +32,7 @@ public class Board extends Display {
 			{1,0,0,3,0,2,0,5,5,5,5,5,0,2,0,3,0,0,1},
 			{1,0,0,0,0,2,0,0,0,5,0,0,0,2,0,0,0,0,1},
 			{1,0,2,2,2,2,2,2,0,5,0,2,2,2,2,2,2,0,1},				
-			{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+			{1,0,0,0,0,0,0,0,0,6,0,0,0,0,0,0,0,0,1},
 			{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
 	}; 
 	
@@ -76,6 +76,11 @@ public class Board extends Display {
 				else if (mazeNum[j][i]==0) {
 					maze[i][j]= new Box(sketch);
 					maze [i][j].addPacdots();
+				}
+				
+				else if(mazeNum[j][i]==6) {
+					maze[i][j]= new Box(sketch);
+					maze [i][j].addPacman();
 				}
 			}
 			//    sketch.ellipse (posX, PosY)
