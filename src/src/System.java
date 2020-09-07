@@ -82,6 +82,7 @@ public class System extends PApplet {
 			playing.render();
 			board.renderArray();
 			board.renderMaze();
+			renderPacman ();
 			
 			
 			
@@ -226,7 +227,7 @@ public class System extends PApplet {
 			
 			break;
 		}//Switch
-		
+		 
 		
 	} //KeyPressed
 	
@@ -238,7 +239,18 @@ public class System extends PApplet {
 	 
  }//nameplayers
  
- 
+public void renderPacman() {
+	
+	float x= 36+49;
+	float y= 36+199;
+	float heigth=23;
+	float width=23;
+	float start= 0;
+	float stop= 3*PI/2;
+	float pie= PIE;
+	board.renderPacman(x, y, heigth, width, 0, 3*PI/2,PIE);
+	
+}
  
  
  

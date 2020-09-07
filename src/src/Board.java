@@ -4,8 +4,8 @@ package src;
 import processing.core.*;
 
 public class Board extends Display {
-	int posX=40;
-	int PosY=40;
+	int posX=36+49;
+	int PosY=36+199;
 
 	private int startTime;
 	private int endTime;
@@ -73,20 +73,20 @@ public class Board extends Display {
 
 					//app.image(tile,i15,j15+110);
 				}
-				else if (mazeNum[j][i]==0) {
+				else if (mazeNum[j][i]==0) { //Añadir Pacdots
 					maze[i][j]= new Box(sketch);
 					maze [i][j].addPacdots();
 				}
 				
-				else if(mazeNum[j][i]==6) {
-					maze[i][j]= new Box(sketch);
-					maze [i][j].addPacman();
+				//else if(mazeNum[j][i]==6) {
+					//maze[i][j]= new Box(sketch); // añadir pacman
+					//maze [i][j].addPacman();
 				}
 			}
 			//    sketch.ellipse (posX, PosY)
 
 		} 
-	}
+
 	
 	public void renderMaze () {
 		for (int i = 0; i < maze.length; i++) {
@@ -150,10 +150,31 @@ public class Board extends Display {
 		}
 		return ans;
 	}
+	
+	public int pacManleft(int posX, int posY) {
+		return posX-1;	
+	}//left
+	
+	public int pacManUp(int posX, int posY) {
+		return posY-1;	
+	}//up
+	
+	public int pacManDown(int posX, int posY) {
+		return posY+1;	
+	}//down
+	public int pacManRight(int posX, int posY) {
+		return posX+1;	
+	}//right
+	
 
-
-
-
+	 public void renderPacman (float a,float b,float height,float width, float start, float stop,float pie) {
+		sketch.noStroke();
+		 sketch.fill(255, 209, 56);
+		 sketch.arc(a, b, height, width, start, stop);
+		 
+		 
+	 }
+	 	 
 }
 
 
