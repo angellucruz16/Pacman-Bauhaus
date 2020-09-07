@@ -81,6 +81,7 @@ public class System extends PApplet {
 		case 5:
 			playing.render();
 			board.renderArray();
+			board.renderMaze();
 			
 			
 			
@@ -218,6 +219,12 @@ public class System extends PApplet {
 	
 		break;
 		
+		case 5:
+			if (key == 'A'|| key =='a' )
+				//if (board.canGoLeft(posX, posY)==true) 
+				//board.canGoLeft(posX, posY);
+			
+			break;
 		}//Switch
 		
 		
