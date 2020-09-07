@@ -35,9 +35,9 @@ public class Board extends Display {
 			{1,0,0,0,0,0,0,0,0,6,0,0,0,0,0,0,0,0,1},
 			{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
 	}; 
-	
-	
-	
+
+
+
 	public Board(PApplet sketch) {
 		super (sketch);
 		maze = new Box [19][21];
@@ -77,65 +77,64 @@ public class Board extends Display {
 					maze[i][j]= new Box(sketch);
 					maze [i][j].addPacdots();
 				}
-				
-				//else if(mazeNum[j][i]==6) {
-					//maze[i][j]= new Box(sketch); // añadir pacman
-					//maze [i][j].addPacman();
+				else if (mazeNum[j][i]==0) { //Añadir ghost1 
+					maze[i][j]= new Box(sketch);
+					maze [i][j].addGhost1();
 				}
-			}
-			//    sketch.ellipse (posX, PosY)
+		}
 
-		} 
+		}
+	} 
 
-	
+
 	public void renderMaze () {
 		for (int i = 0; i < maze.length; i++) {
 			for (int j = 0; j < maze[0].length; j++) {
 				maze [i][j].render(i*24+50,j*24+200);
 			}
 		}
-		
-		
+
+
 	}
-	
+
 	public void fillMaze () {
 		for (int i = 0; i < maze.length; i++) {
 			for (int j = 0; j < maze[0].length; j++) {
 				maze [i][j]= new Box (sketch);
 			}
 		}
-		
-		
+
+
 	}
-	
+
 	public boolean canGoUp (int posX, int posY){
 		int [] pos = posMatriz(posX, posY);
-			if (maze[pos[0]-1][pos[1]]!= null && mazeNum[pos[0]-1][pos[1]]==0)
-				return true;
-				return false;
+		if (maze[pos[0]-1][pos[1]]!= null && mazeNum[pos[0]-1][pos[1]]==0)
+			return true;
+		return false;
 	}//cangoup
-	
+
 	public boolean canGoDown (int posX, int posY){
 		int [] pos = posMatriz(posX, posY);
-			if (maze[pos[0]+1][pos[1]]!= null && mazeNum[pos[0]+1][pos[1]]==0)
-				return true;
-				return false;
+		if (maze[pos[0]+1][pos[1]]!= null && mazeNum[pos[0]+1][pos[1]]==0)
+			return true;
+		return false;
 	}//cangoup
-	
+
 	public boolean canGoLeft (int posX, int posY){
 		int [] pos = posMatriz(posX, posY);
-			if (maze[pos[0]][pos[1]-1]!= null && mazeNum[pos[0]][pos[1]-1]==0)
-				return true;
-				return false;
+		if (maze[pos[0]][pos[1]-1]!= null && mazeNum[pos[0]][pos[1]-1]==0)
+			return true;
+		return false;
 	}//cangoup
-	
+
 	public boolean canGoRight (int posX, int posY){
 		int [] pos = posMatriz(posX, posY);
-			if (maze[pos[0]][pos[1]+1]!= null && mazeNum[pos[0]][pos[1]+1]==0)
-				return true;
-				return false;
+		if (maze[pos[0]][pos[1]+1]!= null && mazeNum[pos[0]][pos[1]+1]==0)
+			return true;
+		return false;
 	}//cangoup
-	
+
 	public int [] posMatriz (int posX, int posY) { //saber posicion
 		int [] ans = new int [2];
 		for (int i = 0; i < maze.length; i++) {
@@ -146,35 +145,38 @@ public class Board extends Display {
 				ans [1]= j;
 				}
 			}
-				
+
 		}
 		return ans;
 	}
-	
+
 	public int pacManleft(int posX, int posY) {
-		return posX-1;	
+		return posX-24;	
 	}//left
-	
+
 	public int pacManUp(int posX, int posY) {
-		return posY-1;	
+		return posY-24;	
 	}//up
-	
+
 	public int pacManDown(int posX, int posY) {
-		return posY+1;	
+		return posY+24;	
 	}//down
 	public int pacManRight(int posX, int posY) {
-		return posX+1;	
+		return posX+24;	
 	}//right
-	
 
-	 public void renderPacman (float a,float b,float height,float width, float start, float stop,float pie) {
+
+	public void renderPacman (int a,int b,float height,float width, float start, float stop,float pie) {
 		sketch.noStroke();
-		 sketch.fill(255, 209, 56);
-		 sketch.arc(a, b, height, width, start, stop);
-		 
-		 
-	 }
-	 	 
+		sketch.fill(255, 209, 56);
+		sketch.arc(a, b, height, width, start, stop);
+
+
+	}
+	public void renderGhost () {
+	
+	
+	}
 }
 
 
